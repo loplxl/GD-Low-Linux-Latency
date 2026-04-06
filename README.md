@@ -3,7 +3,7 @@ Typically, the culprit for increased input latency on linux can be due to these 
 1. Tearing disabled
 2. Geometry Dash running on X11
 
-# 1.
+# 1. <a href="https://github.com/loplxl/GD-Low-Linux-Latency/blob/main/README.md#1">(#)</a>
 ## How to enable tearing
 You can search for instructions on how to do this for your desktop environment, many desktop environments may not even support tearing.<br>
 I will demonstrate how to do this for KDE Plasma on CachyOS.
@@ -33,7 +33,7 @@ Enter: `KWIN_DRM_NO_AMS=1`<br>
 Save with `Ctrl X, Ctrl Y, Enter`<br>
 Restart your computer
 
-# 2. 
+# 2. <a href="https://github.com/loplxl/GD-Low-Linux-Latency/blob/main/README.md#2">(#)</a>
 ## How to disable X11 in favour of Wayland (only for wayland)
 Assuming you run Wayland, there is an extra layer between Geometry Dash and your screen called XWayland, which is used as Proton runs games with X11 by default.<br>
 To change this, we will use steam launch options, I have found that Proton-GE and Proton-cachyos both have the PROTON_ENABLE_WAYLAND variable available, Proton Experimental does not.<br>
