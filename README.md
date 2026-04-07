@@ -1,17 +1,18 @@
-# Overview
+<h1 align="center">Overview</h1>
 Typically, the culprit for increased input latency on linux can be due to these things:
 1. Tearing disabled
 2. Geometry Dash running on X11
 3. Not using provided optional tweaks (e.g. AMD Anti-Lag)
 
-# Topics:
+<h1 align="center">Topics</h1>
 
 - [1. How to enable tearing](#1-how-to-enable-tearing)
 - [2. How to disable X11 in favour of Wayland](#2-how-to-disable-x11-in-favour-of-wayland-only-for-wayland)
 - [3. Platform-specific tweaks](#3-platform-specific-tweaks)
 - [4. Global game.sh](#4-global-gamesh)
+- [5. Common issues](#common-issues)
   
-# 1. How to enable tearing
+<h1 align="center">1. How to enable tearing</h1>
 You can search for instructions on how to do this for your desktop environment, many desktop environments may not even support tearing.<br>
 I will demonstrate how to do this for KDE Plasma on CachyOS.
 
@@ -27,7 +28,7 @@ I will demonstrate how to do this for KDE Plasma on CachyOS.
 </table>
 <br>
 
-## 1.1 Method 1 (ALL GPUs)
+<h2 align="center">1.1 Method 1 (ALL GPUs)</h2>
 <table>
   <tr>
     <td align="center">Open system settings and navigate to window rules</td>
@@ -39,7 +40,7 @@ I will demonstrate how to do this for KDE Plasma on CachyOS.
   </tr>
 </table>
 
-## 1.1 Method 2 (ONLY AMD / INTEL)
+<h2 align="center">1.1 Method 2 (ONLY AMD / INTEL)</h2>
 
 Set present mode to immediately deliver any frame instead of waiting for a vertical refresh.<br>
 `nano ~/game.sh`<br><br>
@@ -50,7 +51,7 @@ Add present mode variable:<br>
 `exec "$@"`<br>
 Save with `Ctrl X, Ctrl Y, Enter`<br><br>
 
-# 2. How to disable X11 in favour of Wayland (only for wayland)
+<h1 align="center">2. How to disable X11 in favour of Wayland (only for wayland)</h1>
 Assuming you run Wayland, there is an extra layer between Geometry Dash and your screen called XWayland, which is used as Proton runs games with X11 by default.<br>
 To change this, we will use steam launch options, I have found that Proton-GE and Proton-cachyos both have the PROTON_ENABLE_WAYLAND variable available, Proton Experimental does not.<br>
 <table>
@@ -77,14 +78,14 @@ Go to Geometry Dash on Steam, right click it in your library and click on Proper
 Enter this into the LAUNCH OPTIONS box: `~/game.sh %command%`<br>
 Launch Geometry Dash and check KWin debug console, make sure that Geometry Dash is under Wayland Windows<br><br>
 
-# 3. Platform-specific tweaks
+<h1 align="center">3. Platform-specific tweaks</h1>
 
-## AMD GPU
+<h2 align="center">AMD GPU</h2>
 Add this line in your game.sh:<br>
 (or visit #4)<br>
 `export ENABLE_LAYER_MESA_ANTI_LAG=1`<br><br>
 
-# 4. Global game.sh
+<h1 align="center">4. Global game.sh</h1>
 This game.sh is designed to cover all cases for lowest latency:<br>
 `#!/bin/bash`<br>
 `export PROTON_ENABLE_WAYLAND=1`<br>
@@ -123,10 +124,10 @@ Explanation:
   </tr>
 </table>
 
-# Common issues
+<h1 align="center">Common issues</h1>
 "The game doesn't open from steam anymore after adding launch options"<br>
 This is due to the game.sh not being executable, use this command to fix the issue:<br>
 `chmod +x ~/game.sh`
 
 
-## Feel free to make a pull request to improve the quality of this document and suggest other methods.
+<h2 align="center">Feel free to make a pull request to improve the quality of this document and suggest other methods<h2></h2>
