@@ -38,7 +38,7 @@ Add present mode variable:<br>
 `#!/bin/bash`<br>
 `export MESA_VK_WSI_PRESENT_MODE=immediate`<br>
 `exec "$@"`<br>
-Save with `Ctrl X, Ctrl Y, Enter`<br>
+Save with `Ctrl X, Ctrl Y, Enter`<br><br>
 
 # 2. How to disable X11 in favour of Wayland (only for wayland)
 Assuming you run Wayland, there is an extra layer between Geometry Dash and your screen called XWayland, which is used as Proton runs games with X11 by default.<br>
@@ -58,14 +58,14 @@ Save with: `Ctrl X, Ctrl Y, Enter`<br>
 
 Go to Geometry Dash on Steam, right click it in your library and click on Properties<br>
 Enter this into the LAUNCH OPTIONS box: `~/game.sh %command%`<br>
-Launch Geometry Dash and check KWin debug console, make sure that Geometry Dash is under Wayland Windows<br><br><br><br>
+Launch Geometry Dash and check KWin debug console, make sure that Geometry Dash is under Wayland Windows<br><br>
 
 # 3. Platform-specific tweaks
 
 ## AMD GPU
 Add this line in your game.sh:<br>
 (or visit #4)<br>
-`export ENABLE_LAYER_MESA_ANTI_LAG=1`<br>
+`export ENABLE_LAYER_MESA_ANTI_LAG=1`<br><br>
 
 # 4. Global game.sh
 This game.sh is designed to cover all cases for lowest latency:<br>
