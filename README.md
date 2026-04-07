@@ -43,12 +43,19 @@ I will demonstrate how to do this for KDE Plasma on CachyOS.
 <h2 align="center">1.1 Method 2 (ONLY AMD / INTEL)</h2>
 
 Set present mode to immediately deliver any frame instead of waiting for a vertical refresh.<br>
-`nano ~/game.sh`<br><br>
+
+```
+nano ~/game.sh
+```
+<br><br>
 Add present mode variable:<br>
 (or visit #4)<br>
-`#!/bin/bash`<br>
-`export vblank_mode=0<br>
-`exec "$@"`<br>
+
+```
+#!/bin/bash
+export vblank_mode=0
+exec "$@"
+```
 Save with `Ctrl X, Ctrl Y, Enter`<br><br>
 
 <h1 align="center">2. How to disable X11 in favour of Wayland (only for wayland)</h1>
@@ -66,12 +73,17 @@ To change this, we will use steam launch options, I have found that Proton-GE an
 </table><br>
 If it is in X11 category, follow these steps to make Geometry Dash use Wayland:<br>
 
-`nano ~/game.sh`<br><br>
+```
+nano ~/game.sh
+```
+<br><br>
 Add wayland variable:<br>
 (or visit #4)<br>
-`#!/bin/bash`<br>
-`export PROTON_ENABLE_WAYLAND=1`<br>
-`exec "$@"`<br>
+```
+#!/bin/bash
+export PROTON_ENABLE_WAYLAND=1
+exec "$@"
+```
 Save with: `Ctrl X, Ctrl Y, Enter`<br>
 
 Go to Geometry Dash on Steam, right click it in your library and click on Properties<br>
@@ -84,19 +96,24 @@ Launch Geometry Dash and check KWin debug console, make sure that Geometry Dash 
 Add this line in your game.sh:<br>
 (or visit #4)<br>
 
-`export ENABLE_LAYER_MESA_ANTI_LAG=1`<br><br>
+```
+export ENABLE_LAYER_MESA_ANTI_LAG=1
+```
+<br><br>
 
 <h1 align="center">4. Global game.sh</h1>
 This game.sh is designed to cover all cases for lowest latency:<br>
 
-`#!/bin/bash`<br>
-`export PROTON_ENABLE_WAYLAND=1`<br>
-`export vblank_mode=0`<br>
-`export ENABLE_LAYER_MESA_ANTI_LAG=1`<br>
-`export PROTON_NO_STEAMINPUT=1`<br>
-`export LD_PRELOAD=""`<br>
-`export WINEDLLOVERRIDES="xinput1_4=n,b"`
-`exec "$@"`<br>
+```
+#!/bin/bash
+export PROTON_ENABLE_WAYLAND=1
+export vblank_mode=0
+export ENABLE_LAYER_MESA_ANTI_LAG=1
+export PROTON_NO_STEAMINPUT=1
+export LD_PRELOAD=""
+export WINEDLLOVERRIDES="xinput1_4=n,b"
+exec "$@"
+```
 
 Explanation:
 <table>
