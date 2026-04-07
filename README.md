@@ -83,10 +83,12 @@ Launch Geometry Dash and check KWin debug console, make sure that Geometry Dash 
 <h2 align="center">AMD GPU</h2>
 Add this line in your game.sh:<br>
 (or visit #4)<br>
+
 `export ENABLE_LAYER_MESA_ANTI_LAG=1`<br><br>
 
 <h1 align="center">4. Global game.sh</h1>
 This game.sh is designed to cover all cases for lowest latency:<br>
+
 `#!/bin/bash`<br>
 `export PROTON_ENABLE_WAYLAND=1`<br>
 `export vblank_mode=0`<br>
@@ -127,6 +129,7 @@ Explanation:
 <h1 align="center">Common issues</h1>
 "The game doesn't open from steam anymore after adding launch options"<br>
 This is due to the game.sh not being executable, use this command to fix the issue:<br>
+
 `chmod +x ~/game.sh`
 
 
