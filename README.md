@@ -99,7 +99,6 @@ Add this line in your game.sh:<br>
 ```bash
 export ENABLE_LAYER_MESA_ANTI_LAG=1
 ```
-<br><br>
 
 <h1 align="center">4. Global game.sh</h1>
 This game.sh is designed to cover all cases for lowest latency:<br>
