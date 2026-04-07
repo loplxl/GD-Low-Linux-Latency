@@ -14,28 +14,30 @@ Typically, the culprit for increased input latency on linux can be due to these 
 # 1. How to enable tearing
 You can search for instructions on how to do this for your desktop environment, many desktop environments may not even support tearing.<br>
 I will demonstrate how to do this for KDE Plasma on CachyOS.
-<p>
-Open system settings and navigate to display settings.
-  <br>
-  <img width="671" height="130" alt="image" src="https://github.com/user-attachments/assets/6037a398-a939-4fd1-bcc5-3a812cda0014" />
-  <br>
-Ensure that tearing is enabled.
-  <br>
-  <img width="924" height="669" alt="image" src="https://github.com/user-attachments/assets/8b938084-dc30-43a8-8140-a16936ea02e2" />
-  <br>
-</p>
+
+<table>
+  <tr>
+    <td align="center">Open system settings and navigate to display settings</td>
+    <td align="center"><img width="671" height="130" alt="image" src="https://github.com/user-attachments/assets/6037a398-a939-4fd1-bcc5-3a812cda0014" /></td>
+  </tr>
+  <tr>
+    <td align="center">Ensure that tearing is enabled</td>
+    <td align="center"><img width="924" height="669" alt="image" src="https://github.com/user-attachments/assets/8b938084-dc30-43a8-8140-a16936ea02e2" /></td>
+  </tr>
+</table>
+<br>
 
 ## 1.1 Method 1 (ALL GPUs)
-<p>
-Open system settings and navigate to window rules.
-  <br>
-  <img width="678" height="132" alt="image" src="https://github.com/user-attachments/assets/b1da3c42-de1f-42cc-9815-f6b4b0d2e6c6" />
-  <br>
-Copy these settings.
-  <br>
-  <img width="659" height="349" alt="image" src="https://github.com/user-attachments/assets/f9dff8ab-00ec-4118-a7e3-ab0ed0752845" />
-  <br>
-</p>
+<table>
+  <tr>
+    <td align="center">Open system settings and navigate to window rules</td>
+    <td align="center"><img width="678" height="132" alt="image" src="https://github.com/user-attachments/assets/b1da3c42-de1f-42cc-9815-f6b4b0d2e6c6" /></td>
+  </tr>
+  <tr>
+    <td align="center">Copy these settings</td>
+    <td align="center"><img width="659" height="349" alt="image" src="https://github.com/user-attachments/assets/f9dff8ab-00ec-4118-a7e3-ab0ed0752845" /></td>
+  </tr>
+</table>
 
 ## 1.1 Method 2 (ONLY AMD / INTEL)
 
@@ -51,11 +53,18 @@ Save with `Ctrl X, Ctrl Y, Enter`<br><br>
 # 2. How to disable X11 in favour of Wayland (only for wayland)
 Assuming you run Wayland, there is an extra layer between Geometry Dash and your screen called XWayland, which is used as Proton runs games with X11 by default.<br>
 To change this, we will use steam launch options, I have found that Proton-GE and Proton-cachyos both have the PROTON_ENABLE_WAYLAND variable available, Proton Experimental does not.<br>
-
-First, check that Geometry Dash is running through XWayland, I will do this through the KWin debug console<br>
-<img width="679" height="129" alt="image" src="https://github.com/user-attachments/assets/38a1613a-f335-4a5e-a0e3-cad243f62cb5" />
-Open Geometry Dash, and check if Geometry Dash is in Wayland or X11 windows category.<br>
+<table>
+  <tr>
+    <td align="center">First, check that Geometry Dash is running through XWayland, I will do this through the KWin debug console</td>
+    <td align="center"><img width="679" height="129" alt="image" src="https://github.com/user-attachments/assets/38a1613a-f335-4a5e-a0e3-cad243f62cb5" /></td>
+  </tr>
+  <tr>
+    <td align="center">Open Geometry Dash, and check if Geometry Dash is in Wayland or X11 windows category.</td>
+    <td align="center"><img width="503" height="325" alt="image" src="https://github.com/user-attachments/assets/b0992f8b-3e22-4d6b-84b7-14463e3f2f15" /></td>
+  </tr>
+</table><br>
 If it is in X11 category, follow these steps to make Geometry Dash use Wayland:<br>
+
 `nano ~/game.sh`<br><br>
 Add wayland variable:<br>
 (or visit #4)<br>
