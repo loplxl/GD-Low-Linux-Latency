@@ -1,10 +1,8 @@
 <h1 align="center">Overview</h1>
-Typically, the culprit for increased input latency on Linux may be:
-<br>1. Poorly set up graphics drivers
-<br>2. Compositor forcing V-Sync
-<br>3. Geometry Dash running through XWayland
-<br>
-<br>
+Typically, the culprit for increased input latency on Linux may be:<br>
+1. Poorly set up graphics drivers<br>
+2. Compositor forcing V-Sync<br>
+3. Geometry Dash running through XWayland<br>
 
 <h1 align="center">Sections</h1>
 
@@ -20,8 +18,8 @@ Typically, the culprit for increased input latency on Linux may be:
 <h1 align="center">1. Graphics Drivers</h1>
 The single most important part of this guide.<br>
 This is a pretty long topic so for this step you should check out this guide instead:<br>
-https://github.com/lutris/docs/blob/master/InstallingDrivers.md<br>
-<br>
+https://github.com/lutris/docs/blob/master/InstallingDrivers.md<br><br>
+
 I would highly recommend testing a desktop environment with X11 if you use an NVIDIA GPU over Wayland as it may deliver better performance and latency.<br>
 If you do decide to use X11, you can skip the "Enabling Tearing" step and disable the compositor in the settings app instead.<br>
 
@@ -34,7 +32,11 @@ Some gaming focused custom kernels include CachyOS, Xanmod, Liquorix and Zen.<br
 Similar to using a custom kernel, using a custom Proton build such as Proton-GE or CachyOS's Proton will provide you better performance all around and allow the usage of some environment variables such as PROTON_ENABLE_WAYLAND to avoid XWayland if you're on Wayland.<br>
 
 <h1 align="center">4. Enabling Tearing on Wayland</h1>
-You can search for instructions on how to do this for your desktop environment if it is not mentioned here.<br>
+You can search for instructions on how to do this for your desktop environment if it is not mentioned here. (maybe make a PR? :D )<br>
+
+Documented:<br>
+- [KDE Plasma](#kde-plasma)
+- [Hyprland](#hyprland)
 
 Run the following command in your terminal (You can replace "nano" with your preferred CLI text editor):<br>
 
