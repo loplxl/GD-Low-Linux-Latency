@@ -17,7 +17,7 @@ Typically, the culprit for increased input latency on Linux may be:
 - [7. Power Profile](#7-power-profile)
 
 <br>
-<h1 align="left">1. Graphics Drivers</h1>
+<h1 align="center">1. Graphics Drivers</h1>
 The single most important part of this guide.<br>
 This is a pretty long topic so for this step you should check out this guide instead:<br>
 https://github.com/lutris/docs/blob/master/InstallingDrivers.md<br>
@@ -25,15 +25,15 @@ https://github.com/lutris/docs/blob/master/InstallingDrivers.md<br>
 I would highly recommend testing a desktop environment with X11 if you use an NVIDIA GPU over Wayland as it may deliver better performance and latency.<br>
 If you do decide to use X11, you can skip the "Enabling Tearing" step and disable the compositor in the settings app instead.<br>
 
-<h1 align="left">2. The Kernel</h1>
-If you are on a gaming focused Linux distribution such as CachyOS, then this step will not be necessary for you as they already use a custom kernel made for gaming specifically by default.<br>
+<h1 align="center">2. The Kernel</h1>
+If you are on a gaming focused Linux distribution such as CachyOS, then you dont have to worry about this as they already use a custom kernel made for gaming specifically by default.<br>
 However, if you are not on one, then this might potentially make a noticeable difference in system performance, stability, responsiveness and latency.<br>
-Some examples include CachyOS, Xanmod, Liquorix and Zen.<br>
+Some gaming focused custom kernels include CachyOS, Xanmod, Liquorix and Zen.<br>
 
-<h1 align="left">3. Proton</h1>
+<h1 align="center">3. Proton</h1>
 Similar to using a custom kernel, using a custom Proton build such as Proton-GE or CachyOS's Proton will provide you better performance all around and allow the usage of some environment variables such as PROTON_ENABLE_WAYLAND to avoid XWayland if you're on Wayland.<br>
 
-<h1 align="left">4. Enabling Tearing on Wayland</h1>
+<h1 align="center">4. Enabling Tearing on Wayland</h1>
 You can search for instructions on how to do this for your desktop environment if it is not mentioned here.<br>
 
 Run the following command in your terminal (You can replace "nano" with your preferred CLI text editor):<br>
@@ -59,19 +59,17 @@ Direct_Scanout=1
 ```
 Save with: `Ctrl+X, Ctrl+Y, Enter`<br>
 
-<br>
-<br>
 <h1 align="center">5. Environment Variables</h1>
 Use the following environment variables in your Geometry Dash launch options for the least latency:<br>
-To set environment variables in Steam, right click Geometry Dash in your library, click on properties and write the following inside:
+To set environment variables in Steam, right click Geometry Dash in your library, click on properties and paste the following into your launch options:
 
 ```
-SDL_VIDEODRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
+SDL_VIDEO_DRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
 ```
 Explanation:
 <table>
   <tr>
-    <td align="center">SDL_VIDEODRIVER=wayland</td>
+    <td align="center">SDL_VIDEO_DRIVER=wayland</td>
     <td align="center">Forces SDL2 apps to use Wayland back-end instead of defaulting to X11/XWayland. Without it, SDL2 usually uses X11 even under Wayland unless compiled otherwise</td>
   </tr>
   <tr>
@@ -88,10 +86,10 @@ Explanation:
   </tr>
 </table>
 
-<h1 align="left">6. Ananicy-Cpp</h1>
+<h1 align="center">6. Ananicy-Cpp</h1>
 TBD<br>
 
-<h1 align="left">7. Power Profile</h1>
+<h1 align="center">7. Power Profile</h1>
 TBD<br>
 
 <h2 align="center">Feel free to make a pull request to improve the quality of this guide and to suggest other methods!</h2>
