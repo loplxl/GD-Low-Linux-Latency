@@ -130,4 +130,4 @@ This is due to the game.sh not being executable, use this command to fix the iss
 `chmod +x ~/game.sh`
 
 
-<h2 align="center">Feel free to make a pull request to improve the quality of this document and suggest other methods<h2></h2>
+<h2 align="center">Feel free to make a pull request to improve the quality of this document and suggest other methods</h2>
