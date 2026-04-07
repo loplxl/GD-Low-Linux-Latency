@@ -80,24 +80,24 @@ This game.sh is designed to cover all cases for lowest latency:<br>
 Explanation:
 <table>
   <tr>
-    <td>PROTON_ENABLE_WAYLAND=1</td>
-    <td>Enables Wayland over X11 to avoid XWayland input lag overhead</td>
+    <td align="center">PROTON_ENABLE_WAYLAND=1</td>
+    <td align="center">Enables Wayland over X11 to avoid XWayland input lag overhead</td>
   </tr>
   <tr>
-    <td>MESA_VK_WSI_PRESENT_MODE=immediate</td>
-    <td>Uses present mode, which instantly displays a frame instead of waiting for the next frames for example with vsync.</td>
+    <td align="center">MESA_VK_WSI_PRESENT_MODE=immediate</td>
+    <td align="center">Uses present mode, which instantly displays a frame instead of waiting for the next frames for example with vsync.</td>
   </tr>
   <tr>
-    <td>ENABLE_LAYER_MESA_ANTI_LAG=1</td>
-    <td>Reduces input lag on AMD GPUs with AMD Anti-Lag</td>
+    <td align="center">ENABLE_LAYER_MESA_ANTI_LAG=1</td>
+    <td align="center">Reduces input lag on AMD GPUs with AMD Anti-Lag</td>
   </tr>
   <tr>
-    <td>PROTON_NO_STEAMINPUT=1</td>
-    <td>Fixes controller compatibility issues</td>
+    <td align="center">PROTON_NO_STEAMINPUT=1</td>
+    <td align="center">Fixes controller compatibility issues</td>
   </tr>
   <tr>
-    <td>LD_PRELOAD=""</td>
-    <td>Removes steam overlay to fix stuttering caused by steam's game recorder feature</td>
+    <td align="center">LD_PRELOAD=""</td>
+    <td align="center">Removes steam overlay to fix stuttering caused by steam's game recorder feature</td>
   </tr>
 </table>
 
