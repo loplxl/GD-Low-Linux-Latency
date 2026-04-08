@@ -66,7 +66,7 @@ Use the following environment variables in your Geometry Dash launch options for
 To set environment variables in Steam, right click Geometry Dash in your library, click on properties and paste the following into your launch options:
 
 ```
-SDL_VIDEO_DRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
+SDL_VIDEO_DRIVER=wayland SDL_VIDEODRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
 ```
 Explanation:
 <table>
