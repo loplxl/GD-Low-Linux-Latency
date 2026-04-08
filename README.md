@@ -91,6 +91,8 @@ Explanation:
 <h1 align="center">6. Ananicy-Cpp</h1>
 TBD<br>
 
+A low effort alternative to Ananicy-Cpp is [Feral Gamemode](https://feralinteractive.github.io/gamemode), however you should not use both together.<br>
+
 <h1 align="center">7. Power Profile</h1>
 TBD<br>
 
