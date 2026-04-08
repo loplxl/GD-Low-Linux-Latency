@@ -51,7 +51,7 @@ Enable the "Allow tearing on full-screen applications" option in Display Configu
 ```
 KWIN_DRM_NO_AMS=1
 ```
-Save with: `Ctrl+X, Ctrl+Y, Enter`<br>
+For nano, save with: `Ctrl+X, Ctrl+Y, Enter`<br>
 
 <h2 align="left">Hyprland:</h2>
 In your /etc/environment file, put:<br>
@@ -59,7 +59,7 @@ In your /etc/environment file, put:<br>
 ```
 Direct_Scanout=1
 ```
-Save with: `Ctrl+X, Ctrl+Y, Enter`<br>
+For nano, save with: `Ctrl+X, Ctrl+Y, Enter`<br>
 
 <h1 align="center">5. Environment Variables</h1>
 Use the following environment variables in your Geometry Dash launch options for the least latency:<br>
