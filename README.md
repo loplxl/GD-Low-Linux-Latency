@@ -13,6 +13,7 @@ Typically, the culprit for increased input latency on Linux may be:<br>
 - [5. Environment Variables](#5-environment-variables)
 - [6. Ananicy-Cpp](#6-ananicy-cpp)
 - [7. Power Profile](#7-power-profile)
+- [8. Scheduler](#8-scheduler)
 
 <br>
 <h1 align="center">1. Graphics Drivers</h1>
@@ -93,5 +94,8 @@ TBD<br>
 
 <h1 align="center">7. Power Profile</h1>
 TBD<br>
+
+<h1 align="center">8. Scheduler</h1>
+Currently, cosmos-lowlatency is the best scheduler for low latency.<br>
 
 <h2 align="center">Feel free to make a pull request to improve the quality of this guide and to suggest other methods!</h2>
