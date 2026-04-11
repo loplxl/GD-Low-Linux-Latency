@@ -29,10 +29,6 @@ If you are on a gaming focused Linux distribution such as CachyOS, then you dont
 However, if you are not on one, then this might potentially make a noticeable difference in system performance, stability, responsiveness and latency.<br>
 Some gaming focused custom kernels include CachyOS, Xanmod, Liquorix and Zen.<br>
 
-<h2 align="center">NTSYNC</h2>
-The NTSYNC driver is another compatibility layer between Windows and Linux, meant to mimic the Windows NTSYNC driver.<br>
-It can be added as a kernel module, kernels like CachyOS' kernel will have NTSYNC by default, though you will have to check, there is a documented issue in the Environment Varibles section (5) that is noteworthy.<br>
-
 <h1 align="center">3. Proton</h1>
 Similar to using a custom kernel, using a custom Proton build such as Proton-GE or CachyOS's Proton will provide you better performance all around and allow the usage of some environment variables such as PROTON_ENABLE_WAYLAND to avoid XWayland if you're on Wayland.<br>
 
@@ -71,7 +67,7 @@ Use the following environment variables in your Geometry Dash launch options for
 To set environment variables in Steam, right click Geometry Dash in your library, click on properties and paste the following into your launch options:
 
 ```
-SDL_VIDEO_DRIVER=wayland SDL_VIDEODRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
+ENABLE_LAYER_MESA_ANTI_LAG=1 PROTON_USE_NTSYNC=1 SDL_VIDEO_DRIVER=wayland SDL_VIDEODRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
 ```
 Explanation:
 <table>
@@ -81,7 +77,7 @@ Explanation:
   </tr>
   <tr>
     <td align="center">PROTON_ENABLE_WAYLAND=1</td>
-    <td align="center">Enables Wayland over X11 to avoid XWayland input lag overhead<br>Note that if your kernel does not have NTSYNC enabled, this will cause the game window to not appear when this variable is set, make sure to add NTSYNC to your kernel as it also reduces latency.</td>
+    <td align="center">Enables Wayland over X11 to avoid XWayland input lag overhead</td>
   </tr>
   <tr>
     <td align="center">vblank_mode=0</td>
@@ -90,6 +86,10 @@ Explanation:
   <tr>
     <td align="center">WINEDLLOVERRIDES="xinput1_4=n,b"</td>
     <td align="center">Required for <a href="https://geode-sdk.org">Geode</a> to function</td>
+  </tr>
+  <tr>
+    <td align="center">PROTON_USE_NTSYNC=1</td>
+    <td align="center">NTSYNC should always be on - usually its on by default</td>
   </tr>
 </table>
 
