@@ -67,29 +67,29 @@ Use the following environment variables in your Geometry Dash launch options for
 To set environment variables in Steam, right click Geometry Dash in your library, click on properties and paste the following into your launch options:
 
 ```
-SDL_VIDEO_DRIVER=wayland SDL_VIDEODRIVER=wayland PROTON_ENABLE_WAYLAND=1 vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" PROTON_USE_NTSYNC=1 %command%
+PROTON_ENABLE_WAYLAND=1 PROTON_USE_NTSYNC=1 SDL_VIDEO_DRIVER=wayland SDL_VIDEODRIVER=wayland vblank_mode=0 WINEDLLOVERRIDES="xinput1_4=n,b" %command%
 ```
 Explanation:
 <table>
-  <tr>
-    <td align="center">SDL_VIDEO_DRIVER=wayland<br>SDL_VIDEODRIVER=wayland</td>
-    <td align="center">Forces SDL (2 and 3) apps to use Wayland back-end instead of defaulting to X11/XWayland. Without it, SDL uses X11 even under Wayland unless compiled otherwise.</td>
-  </tr>
   <tr>
     <td align="center">PROTON_ENABLE_WAYLAND=1</td>
     <td align="center">Enables Wayland over X11 to avoid XWayland input lag overhead</td>
   </tr>
   <tr>
+    <td align="center">PROTON_USE_NTSYNC=1</td>
+    <td align="center">NTSync is a kernel module to do some of the work that Wine does directly on the kernel, significantly reducing input latency in some cases.</td>
+  </tr>
+  <tr>
+    <td align="center">SDL_VIDEO_DRIVER=wayland<br>SDL_VIDEODRIVER=wayland</td>
+    <td align="center">Forces SDL (2 and 3) apps to use Wayland back-end instead of defaulting to X11/XWayland. Without it, SDL uses X11 even under Wayland unless compiled otherwise.</td>
+  </tr>
+  <tr>
     <td align="center">vblank_mode=0</td>
-    <td align="center">Uses present mode, which instantly displays a frame instead of waiting for a vertical refresh (vblank)</td>
+    <td align="center">Does not allow the usage of VSync by forcefully disabling it in the driver itself.</td>
   </tr>
   <tr>
     <td align="center">WINEDLLOVERRIDES="xinput1_4=n,b"</td>
-    <td align="center">Required for <a href="https://geode-sdk.org">Geode</a> to function</td>
-  </tr>
-  <tr>
-    <td align="center">PROTON_USE_NTSYNC=1</td>
-    <td align="center">NTSYNC should always be on - usually its on by default</td>
+    <td align="center">Required for the mod loader <a href="https://geode-sdk.org">Geode</a> to function</td>
   </tr>
 </table>
 
@@ -100,6 +100,6 @@ TBD<br>
 TBD<br>
 
 <h1 align="center">8. Scheduler</h1>
-Currently, cosmos-lowlatency is the best scheduler for low latency.<br>
-
+Currently, scx_cosmos with the "-m performance -c 0 -p 0 -w" parameters tend to be the best for low latency on most systems.<br>
+<br>
 <h2 align="center">Feel free to make a pull request to improve the quality of this guide and to suggest other methods!</h2>
