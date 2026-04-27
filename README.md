@@ -87,7 +87,7 @@ Make sure to run your game in fullscreen otherwise it will not work.<br>
 
 <h2 align="left">Niri:</h2>
 Niri has no support for tearing, but <a href="https://github.com/urayde/niri">urayde's fork</a> has experimental support. Use at your own risk.<br>
-Unfortunately, you'll have to build it from source, as there are no binaries available. Check your distribution's documentation for more details.<br>
+Unfortunately, you'll have to build it from source, as there are no binaries available. After that you need to install it for your system, check your distribution's documentation for more details.<br>
 After installation, enabling tearing can be done in one of two ways:<br>
 
 - Using window rules (tearing only when the GD window or any other specified windows are focused):
