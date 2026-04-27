@@ -85,6 +85,10 @@ windowrule = match:class steam_app_322170, immediate yes
 ```
 Make sure to run your game in fullscreen otherwise it will not work.<br>
 
+<h2 align="left">Niri:</h2>
+Niri has no support for tearing, but <a href="https://github.com/urayde/niri">urayde's fork</a> has experimental support. Use at your own risk.<br>
+Unfortunately, you'll have to build it from source, as there are no binaries available. Check your distribution's documentation for more details.
+
 <h1 align="center">5. Environment Variables</h1>
 Use the following environment variables in your Geometry Dash launch options for the least latency:<br>
 To set environment variables in Steam, right click Geometry Dash in your library, click on properties and paste the following into your launch options:<br>
