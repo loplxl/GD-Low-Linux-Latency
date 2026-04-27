@@ -100,7 +100,7 @@ After installation, edit your `~/.config/niri/config.kdl` file. This can be done
 
 ```kdl
 window-rule {
-  match app-id="GeometryDash" is-focused=true
+  match app-id="steam_app_322170" is-focused=true
 
   allow-tearing true
 }
