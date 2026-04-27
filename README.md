@@ -38,21 +38,28 @@ You can search for instructions on how to do this for your desktop environment i
 Documented:<br>
 - [KDE Plasma](#kde-plasma)
 - [Hyprland](#hyprland)
+- [Niri](#niri)
 
-Run the following command in your terminal (You can replace "nano" with your preferred CLI text editor):<br>
+You will need a text editor. The examples use Nano, which is common and easy to use. Run it with:
 
 ```
-sudo nano /etc/environment
+sudo nano <file>
 ```
-After that, follow the steps based on your desktop environment:<br>
+
+Where "<file>" is the file you want to edit. "sudo" can generally be omitted if the file is in your home directory.<br>
+To exit, do `Ctrl+X`. This will exit Nano if no changes were made.<br>
+If changes were made, save them with `Y, Enter` or discard them with `N`.
+
+Now that you have your text editor ready, follow the steps based on your desktop environment.<br>
 
 <h2 align="left">KDE Plasma:</h2>
-Enable the "Allow tearing on full-screen applications" option in Display Configuration and put this in your /etc/environment file:<br>
+First, enable the "Allow tearing on full-screen applications" option in Display Configuration.<br>
+
+Then, using your text editor, put this in your /etc/environment file:<br>
 
 ```
 KWIN_DRM_NO_AMS=1
 ```
-If you're using Nano, save with: `Ctrl+X, Ctrl+Y, Enter`<br>
 
 Afterwards, in your start menu search up "Window Rules" and open it.<br>
 Click "Add Property" and add "Allow Tearing" by clicking on the "+" next to it.<br>
@@ -60,15 +67,13 @@ Once added, make sure Allow Tearing is set to "Force".<br>
 Set Window Class to "Exact match" and put "steam_app_322170" into the text box and then finally click on Apply.<br>
 
 <h2 align="left">Hyprland:</h2>
-In your /etc/environment file, put:<br>
+
+Using your text editor, put this in your /etc/environment file:<br>
 
 ```
 Direct_Scanout=1
 ```
 
-Make sure to run your game in fullscreen otherwise it will not work.<br>
-
-If you're using Nano, save with: `Ctrl+X, Ctrl+Y, Enter`<br>
 Afterwards go into your '~/.config/hypr/hyprland.conf' config file, find the allow_tearing variable and set it to true.<br>
 After that, right outside of the bracket, put the following:<br>
 
@@ -86,15 +91,16 @@ windowrule = match:class steam_app_322170, immediate yes
 Make sure to run your game in fullscreen otherwise it will not work.<br>
 
 <h2 align="left">Niri:</h2>
+
 Niri has no support for tearing, but <a href="https://github.com/urayde/niri">urayde's fork</a> has experimental support. Use at your own risk.<br>
 Unfortunately, you'll have to build it from source, as there are no binaries available. After that you need to install it for your system, check your distribution's documentation for more details.<br>
-After installation, enabling tearing can be done in one of two ways:<br>
+After installation, edit your `~/.config/niri/config.kdl` file. This can be done in one of two ways, so add the following to the file depending on what you want:<br>
 
-- Using window rules (tearing only when the GD window or any other specified windows are focused):
+- Using window rules (tearing only when the specified windows (in this case, only GD) are focused):
 
 ```kdl
 window-rule {
-  match app-id="^gd$" is-focused=true
+  match app-id="GeometryDash" is-focused=true
 
   allow-tearing true
 }
