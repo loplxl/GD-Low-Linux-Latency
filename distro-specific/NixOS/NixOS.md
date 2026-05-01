@@ -96,7 +96,7 @@ Finally, run these commands:
 sudo nix flake update
 
 # rebuild system
-sudo nixos-rebuild --switch
+sudo nixos-rebuild switch
 ```
 
 We're done for now! We'll come back to this `flake.nix` file later.
