@@ -358,7 +358,7 @@ Then, in your `configuration.nix`, make these changes:
 
 Now, go to your Home manager config folder, and edit `flake.nix` to look something like this:
 
-```
+```nix
 {
     # ...
 
