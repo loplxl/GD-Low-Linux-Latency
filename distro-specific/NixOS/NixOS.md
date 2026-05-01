@@ -109,7 +109,7 @@ If you're already using a flake-based Home Manager install, you can skip this se
 
 After switching to flakes, we're ready to install [Home Manager](https://github.com/nix-community/home-manager). It's a little tool that helps separate your system config and programs from your user config and programs. It allows you to declare user configuration files, which we'll need!
 
-There's several ways to install it, check the link above for more details. For this to work, we'll need a flake-based installation. Installing it standalone is recommended, and this guide will assume a standalone installation.
+There's several ways to install it, check [this link](https://nix-community.github.io/home-manager) for more details. For this to work, we'll need a flake-based installation. Installing it standalone is recommended, and this guide will assume a standalone installation.
 
 > [!WARNING]
 > **It's NOT the first "Standalone installation" in the table of contents! Scroll down to find a "Standalone setup" under a "Nix Flakes" section.**
