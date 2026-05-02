@@ -1,0 +1,31 @@
+// ...
+
+
+
+// remember you have one of two options for screen tearing with urayde's niri fork
+
+// option one: window rule
+// this will enable tearing only when the GD window is focused
+// try to put this next to existing window rules to keep it tidy
+window-rule {
+    match app-id="steam_app_322170" is-focused=true
+
+    allow-tearing true
+}
+
+// option two: debug options
+// this will force tearing everywhere
+// warning! this a debug option is not meant for normal use
+// use at your own risk
+debug {
+    force-tearing
+}
+
+
+
+// i know, really empty, this is just showing the relevant parts of the config
+// a valid niri config file has a loooooooooooooot more stuff. don't just replace yours with this!
+
+
+
+// ...
