@@ -108,13 +108,8 @@ KWIN_DRM_NO_AMS=1
 Afterwards, in your start menu search up "Window Rules" and open it.
 
 
-Click "Add Property" and add "Allow Tearing" by clicking on the "+" next to it.
 
-
-Once added, make sure Allow Tearing is set to "Force".
-
-
-Set Window Class to "Exact match" and put "steam_app_322170" into the text box and then finally click on Apply.
+Click "Add New..." and set Window Class to "Exact match" and put "steam_app_322170" into the text box, then click "Add Property" and add the "Allow Tearing" property and make sure Allow Tearing is set to "Force" then finally click on Apply.
 
 
 <br>
