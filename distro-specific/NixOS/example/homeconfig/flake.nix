@@ -23,7 +23,7 @@
             inherit pkgs;
             extraSpecialArgs = { inherit inputs; };
             modules = [
-                inputs.nixi.homeModules.config
+                inputs.niri.homeModules.config
                 ./home.nix
                 # ...
             ];
