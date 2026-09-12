@@ -61,6 +61,9 @@ Some gaming focused custom kernels include CachyOS, Xanmod, Liquorix and Zen.
 Similar to using a custom kernel, using a custom Proton build such as Proton-GE or CachyOS's Proton will provide you better performance all around and allow the usage of some environment variables such as PROTON_ENABLE_WAYLAND to avoid XWayland if you're on Wayland.
 
 
+Proton 11 requires another [environment variable](#5-environment-variables) to be compatible with CBF, if you don't want to do that then Proton 10 sunset (latest) works fine too.
+
+
 <br>
 <h1 align="center">4. Enabling Tearing on Wayland</h1>
 You can search for instructions on how to do this for your desktop environment if it is not mentioned here. (maybe make a PR? :D)
@@ -192,6 +195,9 @@ PROTON_ENABLE_WAYLAND=1 PROTON_USE_NTSYNC=1 SDL_VIDEO_DRIVER=wayland SDL_VIDEODR
 ```
 
 
+Proton 11 requires another environment variable to be compatible with CBF, explained in the next section. If you don't want to do that, Proton 10 sunset (latest) works fine too.
+
+
 Explanation:
 <table>
   <tr>
@@ -215,6 +221,20 @@ Explanation:
     <td align="center">Required for the mod loader <a href="https://geode-sdk.org">Geode</a> to function.</td>
   </tr>
 </table>
+
+
+<h2>Proton 11 CBF compatibility</h2>
+
+
+For Proton 11 to work with CBF, it requires linking the libevdev library to Geometry Dash, this is done through the `LD_PRELOAD` environment variable.
+
+
+The preferred way of applying environment variables is through a wrapper script, so instead of doing 1 big line in the launch options, you do something like this: `~/gd.sh %command%`
+A wrapper script allows doing logical decisions to choose what variables to apply and what to set them to.
+
+
+My `gd.sh` script is inside the scripts folder of the repository, [here](https://github.com/loplxl/GD-Low-Linux-Latency/blob/main/scripts/gd.sh).
+
 
 <br>
 <h1 align="center">6. Ananicy-Cpp</h1>
