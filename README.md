@@ -132,7 +132,12 @@ After that, right outside of the bracket, put the following:
 
 
 ```kdl
-windowrule = match:class steam_app_322170, immediate yes
+hl.window_rule({
+    name  = "gd-hyprland-tearing",
+    match = { class = "steam_app_322170" },
+    immediate = true
+})
+
 ```
 It should now look something like this:
 
@@ -142,7 +147,12 @@ general {
     allow_tearing = true
 }
 
-windowrule = match:class steam_app_322170, immediate yes
+hl.window_rule({
+    name  = "gd-hyprland-tearing",
+    match = { class = "steam_app_322170" },
+    immediate = true
+})
+
 ```
 Make sure to run your game in fullscreen otherwise it will not work.
 
@@ -258,7 +268,7 @@ TBD
 <h1 align="center">8. Scheduler</h1>
 
 
-Currently, scx_cosmos with the "-m performance -c 0 -p 0 -w" parameters (aka. low latency) tend to be the best for low latency on most systems.
+Currently, scx_cosmos with the `-m performance -c 0 -p 0 -w` parameters (aka. low latency) tend to be great for low latency on most systems.
 
 
 If you do not want to use external schedulers, BORE is also a great option.
