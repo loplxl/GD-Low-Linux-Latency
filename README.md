@@ -25,6 +25,7 @@ There are also [distro-specific instructions](distro-specific) for the following
 - [6. Ananicy-Cpp](#6-ananicy-cpp)
 - [7. Power Profile](#7-power-profile)
 - [8. Scheduler](#8-scheduler)
+- [9. Backporting](#9-backporting)
 
 
 <h1 align="center">1. Graphics Drivers</h1>
@@ -272,6 +273,16 @@ Currently, scx_cosmos with the `-m performance -c 0 -p 0 -w` parameters (aka. lo
 
 
 If you do not want to use external schedulers, BORE is also a great option.
+
+
+<br>
+<h1 align="center">9. Backporting</h1>
+
+
+Through the use of launch options, you can conveniently backport to older versions (primarily because Geode isn't updated). You will need to specify the AppID and the Steam compatdata path (otherwise your GD data won't transfer)
+
+
+This is done in my `gd.sh` script [here](https://github.com/loplxl/GD-Low-Linux-Latency/blob/main/scripts/gd.sh) which you can run as launch options `/path/to/gd.sh %command%`
 
 
 <br>
