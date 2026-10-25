@@ -19,8 +19,9 @@ export WINEDLLOVERRIDES="xinput1_4=n,b"
 
 # Proton 11 fix
 LIBEVDEV=$(ldconfig -p | awk '/libevdev\.so/{print $NF; exit}')
-if [[ -z "$LIBEVDEV" ]]; then
-	export LD_PRELOAD="$LIBEVDEV"
+if [[ -n "$LIBEVDEV" ]]; then
+	export LD_PRELOAD="${LD_PRELOAD:+$LD_PRELOAD:}$LIBEVDEV" #append
+else
 	mkdir ~/gd-low-linux-latency-logs
 	echo "No libevdev file found, you should install libevdev" >> ~/gd-low-linux-latency-logs/log.txt
 fi
